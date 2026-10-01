@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Мой Блог - Задания</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pic.css">
+    <link rel="stylesheet" href="css/flex.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f6f9;
+        }
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .content {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Cайт Карпенко М.Е.</h1>
+    </header>
+
+    <!-- Часть Content -->
+    <div class="content">
+        <h2>Задание 1 Вариант 1</h2>
+
+        <div class="canvas-200">
+            <!-- Почва -->
+            <div class="ground"></div>
+
+            <!-- Трава -->
+            <div class="grass grass-1"></div>
+            <div class="grass grass-2"></div>
+            <div class="grass grass-3"></div>	
+
+            <!-- Ветка с листьями вверху -->
+            <div class="branch-wrap">
+                <div class="branch"></div>
+                <div class="leaf leaf-1"></div>
+                <div class="leaf leaf-2"></div>
+                <div class="leaf leaf-3"></div>
+            </div>
+
+            <!-- Динозавр -->
+            <div class="dino">
+                <!-- Хвост -->
+                <div class="tail"></div>
+
+                <!-- Задняя нога-->
+                <div class="leg leg-back"></div>
+                <div class="foot foot-front"></div>
+
+                <!-- Передняя нога-->
+                <div class="leg leg-front"></div>
+                <div class="foot foot-back"></div>
+
+                <!-- Туловище -->
+                <div class="body"></div>
+
+                <!-- Лапы -->
+                <div class="arm arm-back"></div>
+                <div class="arm arm-front"></div>
+
+                <!-- Шея и голова -->
+                <div class="neck"></div>
+                <div class="head">
+                    <div class="antenna antenna-left"></div>
+                    <div class="antenna antenna-right"></div>
+                    <div class="eye eye-left"><div class="pupil"></div></div>
+                    <div class="eye eye-right"><div class="pupil"></div></div>
+                    <div class="nostril nostril-left"></div>
+                    <div class="nostril nostril-right"></div>
+                    <div class="teeth">
+                        <span class="tooth"></span>
+                        <span class="tooth"></span>
+                        <span class="tooth"></span>
+                        <span class="tooth"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Задание 2: Flexbox-ролик -->
+    <div class="content">
+        <h2>Задание 2 Вариант 3. Flexbox-ролик</h2>
+        <p>Наведите мышь на ролик, затем на принца и на лягушку. Зажмите кнопку мыши.</p>
+
+        <div class="roller">
+            <!-- Реплики -->
+            <div class="roller__text">
+                <span class="roller__phrase roller__phrase--who">Ты кто?</span>
+                <span class="roller__phrase roller__phrase--me">Я принцесса</span>
+            </div>
+
+            <!-- Сцена -->
+            <div class="roller__stage">
+                <!-- Принц: цельная картинка / тело + голова -->
+                <div class="roller__prince">
+                    <img class="prince-still" src="images/prince1.png" alt="Принц" draggable="false">
+                    <img class="prince-body" src="images/prince2.png" alt="" draggable="false">
+                    <img class="prince-head" src="images/prince3.png" alt="" draggable="false">
+                </div>
+
+                <!-- Лягушка / принцесса -->
+                <div class="roller__hero">
+                    <img class="frog" src="images/frog1.png" alt="Лягушка" draggable="false">
+                    <img class="princess" src="images/princess.png" alt="Принцесса" draggable="false">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

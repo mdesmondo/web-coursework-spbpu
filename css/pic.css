@@ -1,0 +1,318 @@
+
+.canvas-200 {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    background-color: #ffffff;
+    margin: 20px auto;
+    border: 2px dashed #cccccc;
+    overflow: hidden;
+}
+
+/* 
+/* 
+   Почва
+*/
+.ground {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 200px;
+    height: 45px;
+    background: repeating-linear-gradient(
+        90deg,
+        #ffff00,
+        #ffff00 11px,
+        #ff9900 11px,
+        #ff9900 22px
+    );
+    background-position: -7px 0;
+}
+
+
+.grass {
+    position: absolute;
+    bottom: 44px; 
+    background: transparent;
+    border-style: solid;
+    border-color: #00e611;
+}
+
+.grass-1 {
+    right: 35px;
+    width: 28px;
+    height: 60px;
+    border-width: 4px 0 0 4px; 
+    border-top-left-radius: 30px; 
+    border-top-right-radius: 20px / 40px; 
+}
+
+.grass-2 {
+    right: 6px;
+    width: 28px;
+    height: 52px;
+    border-width: 4px 0 0 4px; 
+    border-top-left-radius: 32px; 
+    border-top-right-radius: 20px / 40px; 
+}
+
+.grass-3 {
+    right: 10px;
+    width: 28px;
+    height: 52px;
+    border-width: 4px 4px 0 0; 
+    border-top-right-radius: 32px; 
+    border-top-left-radius: 20px / 40px; 
+}
+/* 
+   Ветка и листья
+   */
+.branch-wrap {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100px;
+    height: 80px;
+}
+
+.branch {
+    position: absolute;
+    top: -6px;
+    right: -16px;
+    width: 80px;
+    height: 70px;
+    border-top: 4px solid #5a2a18;
+    border-radius: 50% 50% 0 0;
+    transform: rotate(-30deg);
+}
+
+.leaf {
+    position: absolute;
+    background-color: #00e611;
+    border-radius: 0 100% 0 100%;
+}
+
+.leaf-1 {
+    width: 30px;
+    height: 12px;
+    top: -3px;
+    right: 55px;
+    transform: rotate(10deg);
+}
+
+.leaf-2 {
+    width: 35px;
+    height: 12px;
+    top: 23px;
+    right: 25px;
+    transform: rotate(25deg);
+}
+
+.leaf-3 {
+    width: 38px;
+    height: 14px;
+    top: 5px;
+    right: 2px;
+    transform: rotate(25deg);
+}
+
+/* 
+   Динозавр
+   */
+/* Хвост */
+.tail {
+    position: absolute;
+    bottom: 70px;
+    left: -5px;
+    width: 50px;
+    height: 60px;
+    border-left: 20px solid #8cc63f;
+    border-bottom: 20px solid #8cc63f;
+    border-bottom-left-radius: 50px;
+    border-top-left-radius: 40px;
+    transform: rotate(-10deg);
+}
+
+/* Туловище */
+.body {
+    position: absolute;
+    bottom: 52px;
+    left: 15px;
+    width: 76px;
+    height: 66px;
+    background: radial-gradient(circle at 45% 60%, #eef7b5 0%, #8cc63f 60%, #689f38 100%);
+    border-radius: 50%;
+}
+
+/* Ноги и лапы */
+.leg {
+    position: absolute;
+    width: 14px;
+    height: 22px;
+    background-color: #558b2f;
+    border-radius: 4px;
+}
+.leg-front {
+    bottom: 35px;
+    left: 54px;
+}
+.leg-back {
+    bottom: 35px;
+    left: 36px;
+}
+
+
+.foot {
+    position: absolute;
+    background: radial-gradient(circle at 50% 20%, #e0e0e0 0%, #a1a1a1 40%, #558b2f 100%);
+    border-radius: 10px 10px 4px 4px;
+}
+.foot-front {
+    bottom: 35px;
+    left: 50px;
+    width: 35px;
+    height: 15px;
+}
+.foot-back {
+    bottom: 35px;
+    left: 35px;
+    width: 35px;
+    height: 14px;
+}
+
+
+/* Шея */
+.neck {
+    position: absolute;
+    bottom: 100px;
+    left: 64px;
+    width: 22px;
+    height: 35px;
+    background-color: #8cc63f;
+    border-radius: 10px;
+    transform: rotate(30deg);
+}
+
+/* Голова */
+.head {
+    position: absolute;
+    bottom: 119px;
+    left: 71px;
+    width: 55px;
+    height: 42px;
+    background-color: #8cc63f;
+    border-radius: 20px 25px 15px 15px;
+    transform: rotate(12deg);
+}
+
+/* Усики */
+.antenna {
+    position: absolute;
+    top: -10px;
+    width: 2px;
+    height: 12px;
+    background-color: #8cc63f;
+}
+.antenna-left {
+    left: 18px;
+    transform: rotate(-15deg);
+}
+.antenna-right {
+    left: 28px;
+    transform: rotate(10deg);
+}
+
+/* Глаза */
+.eye {
+    position: absolute;
+    top: 8px;
+    width: 8px;
+    height: 12px;
+    background-color: #000000;
+    border-radius: 50%;
+}
+.eye-left { left: 22px; }
+.eye-right { left: 33px; }
+
+.pupil {
+    position: absolute;
+    top: 3px;
+    left: 2px;
+    width: 5px;
+    height: 6px;
+    background-color: #ffffff;
+    border-radius: 50%;
+}
+
+/* Ноздри */
+.nostril {
+    position: absolute;
+    top: 28px;
+    width: 3px;
+    height: 4px;
+    background-color: #000000;
+    border-radius: 50%;
+}
+.nostril-left { right: 22px; }
+.nostril-right { right: 15px; }
+
+/* Зубы */
+.teeth {
+    position: absolute;
+    bottom: -3px;
+    right: 4px;
+    display: flex;
+    gap: 1px;
+    border-top-right-radius: 20px / 40px; 
+}
+.tooth {
+    width: 0;
+    height: 0;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    border-top: 6px solid #ffee58;
+}
+.tooth:nth-child(1) { 
+    transform: translateY(-2px) rotate(15deg); 
+}
+.tooth:nth-child(2) { 
+    transform: translateY(0px) rotate(5deg); 
+}
+.tooth:nth-child(3) { 
+    transform: translateY(0px)rotate(-5deg);
+}
+.tooth:nth-child(4) { 
+    transform: translateY(-2px) rotate(-15deg);
+}
+
+.arm {
+    position: absolute;
+    width: 10px;
+    height: 25px;
+    background: linear-gradient(180deg, #5b8c1b 0%, #3a5c10 100%);
+    border-radius: 8px 3px 10px 8px;
+    box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.3);
+}
+.arm-back {
+    bottom: 70px;
+    left: 76px;
+    background: linear-gradient(180deg, #426812 0%, #29420a 100%);
+    transform: rotate(290deg);
+}
+.arm-front {
+    bottom: 85px;
+    left: 88px;
+    background: linear-gradient(180deg, #426812 0%, #29420a 100%);
+    transform: rotate(290deg);
+}
+
+.arm::after {
+    content: '';
+    position: absolute;
+    top: 15px;      
+    left: -5px;    
+    width: 12px;
+    height: 10px;
+    background: inherit; 
+    border-radius: 6px 0 0 6px; 
+}
