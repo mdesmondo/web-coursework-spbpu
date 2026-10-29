@@ -7,7 +7,7 @@
     max-width: 1100px;
 }
 
-/* Основная область теста (бежевый фон как в примере ТЗ) */
+/* Основная область теста*/
 .dom-quiz {
     background-color: #f6e7b2;
     border: 2px solid #dfd3b8;
@@ -41,13 +41,13 @@
     transition: transform 0.2s ease, background-color 0.2s ease, opacity 0.2s ease;
 }
 
-/* При наведении блок/кнопка увеличивается (Вариант 2) */
+/* При наведении блок/кнопка увеличивается*/
 .dom-question-btn:hover:not(:disabled) {
     transform: scale(1.06);
     background-color: #a39878;
 }
 
-/* При нажатии происходит небольшое смещение в стороны — тряска (Вариант 2) */
+/* При нажатии происходит небольшое смещение в стороны — тряска*/
 .dom-question-btn:active:not(:disabled) {
     animation: domShakeHorizontal 0.35s ease-in-out;
 }
@@ -57,7 +57,7 @@
     cursor: not-allowed;
 }
 
-/* Надпись "Вопросы закончились" и статистика НАД областью динамического добавления */
+/* Надпись "Вопросы закончились" и статистика над областью динамического добавления */
 .dom-status-area {
     background-color: #f7f1de;
     border-left: 5px solid #776e54;
@@ -100,7 +100,7 @@
     flex: 1;
 }
 
-/* Вариант 2: Блоки с вопросами располагаются ВЕРТИКАЛЬНО */
+/* Блоки с вопросами располагаются ВЕРТИКАЛЬНО */
 .dom-questions-col {
     display: flex;
     flex-direction: column;
@@ -109,7 +109,7 @@
     flex-shrink: 0;
 }
 
-/* Вариант 2: Блоки с ответами располагаются ГОРИЗОНТАЛЬНО */
+/* Блоки с ответами располагаются ГОРИЗОНТАЛЬНО */
 .dom-answers-row {
     display: flex;
     flex-direction: row;
@@ -150,7 +150,7 @@
     cursor: pointer;
 }
 
-/* Вариант 2: При наведении блок увеличивается */
+/* При наведении блок увеличивается */
 .dom-question-block:hover,
 .dom-answer-block:hover {
     transform: scale(1.06);
@@ -158,7 +158,7 @@
     z-index: 2;
 }
 
-/* Вариант 2: Если на блок нажать, то он немного смещается в стороны (тряска) */
+/* Если на блок нажать, то он немного смещается в стороны (тряска) */
 @keyframes domShakeHorizontal {
     0%   { transform: scale(1.06) translateX(0); }
     20%  { transform: scale(1.06) translateX(-8px); }
@@ -217,7 +217,7 @@
     color: #f02c2c;
 }
 
-/* Вариант 2: Перемещение ответов вниз средствами CSS */
+/* Перемещение ответов вниз средствами CSS */
 .dom-answer-block.dom-move-down {
     transform: translateY(500px);
     opacity: 0;

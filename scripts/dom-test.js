@@ -1,4 +1,4 @@
-// Массив вопросов и ответов для Варианта 2 ("Ругательства") строго по ТЗ
+// Массив вопросов и ответов
 const questionsData = [
     {
         question: "Если человека назвали мордофиля, то это…",
@@ -97,7 +97,7 @@ const questionsData = [
     }
 ];
 
-// Функция перемешивания массива (случайный неповторяющийся порядок)
+// Функция перемешивания массива
 function shuffleArray(array) {
     const arr = [...array];
     for (let i = arr.length - 1; i > 0; i--) {
@@ -182,7 +182,7 @@ function renderNextQuestion() {
             if (answerSelected) return;
             answerSelected = true;
 
-            // Эффект тряски при нажатии (Вариант 2)
+            // Эффект тряски при нажатии
             answerBlock.classList.add("dom-shake");
 
             const allAnswerBlocks = Array.from(answersRow.querySelectorAll(".dom-answer-block"));
@@ -191,7 +191,7 @@ function renderNextQuestion() {
                 // ЕСЛИ ОТВЕТ ВЫБРАН ПРАВИЛЬНО:
                 correctAnswersCount++;
 
-                // 1. В поле вопроса появляется маркер правильного ответа (зеленая галочка)
+                // 1. В поле вопроса появляется маркер правильного ответа
                 markerSpan.textContent = "✔";
                 markerSpan.classList.add("dom-correct");
 
@@ -214,7 +214,7 @@ function renderNextQuestion() {
                         wrongBlock.classList.add("dom-move-down");
                     });
 
-                    // 4. Потом исчезает (уезжает вниз) правильный ответ
+                    // 4. Потом исчезает правильный ответ
                     const totalWrongDelay = wrongBlocks.length * 250 + 600;
                     setTimeout(() => {
                         answerBlock.style.transitionDelay = "0s";
@@ -291,7 +291,7 @@ function finishQuiz() {
             allQuestionBlocks.forEach(b => b.classList.remove("dom-active"));
             qBlock.classList.add("dom-active");
 
-            // Очищаем область ответов (скрывая ответы других вопросов) и выводим блок с правильным ответом выбранного вопроса
+            // Очищаем область ответов и выводим блок с правильным ответом выбранного вопроса
             answersRow.innerHTML = "";
             const reviewCard = document.createElement("div");
             reviewCard.className = "dom-answer-block dom-correct-expanded";
