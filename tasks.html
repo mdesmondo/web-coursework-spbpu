@@ -2,13 +2,12 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Мой Блог - Задания</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/pic.css">
-<<<<<<< HEAD
     <link rel="stylesheet" href="css/flex.css">
-=======
->>>>>>> 9c89fbfa95174bab65eb4060da67f07ec0c062f3
+    <link rel="stylesheet" href="css/dom.css">
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -36,10 +35,16 @@
 <body>
 
     <header>
-        <h1>Cайт Карпенко М.Е.</h1>
+        <div class="logo"></div>
+        <h1>Сайт Карпенко М.Е.</h1>
     </header>
 
-    <!-- Часть Content -->
+    <nav>
+        <a href="index.html">Главная</a>
+        <a href="tasks.html">Учебные задания</a>
+    </nav>
+
+    <!-- Задание 1: CSS-рисунок -->
     <div class="content">
         <h2>Задание 1 Вариант 1</h2>
 
@@ -130,5 +135,39 @@
         </div>
     </div>
 
+    <!-- Задание 3: DOM-Тест (Вариант 2. Ругательства) -->
+    <div class="content content--dom">
+        <h2>Задание 3 Вариант 2. DOM-Тест «Ругательства»</h2>
+        <p>Нажмите кнопку «Вопрос», чтобы добавить случайный вопрос, и выберите правильный вариант ответа.</p>
+
+        <div class="dom-quiz">
+            <!-- Кнопка добавления вопроса -->
+            <div class="dom-controls">
+                <button id="dom-next-btn" class="dom-question-btn">Вопрос</button>
+            </div>
+
+            <!-- Надпись "Вопросы закончились" и статистика НАД областью динамического добавления -->
+            <div id="dom-status-area" class="dom-status-area dom-hidden">
+                <div id="dom-finished-msg" class="dom-finished-msg"></div>
+                <div id="dom-stats-msg" class="dom-stats-msg"></div>
+                <div class="dom-review-hint">Нажмите на любой вопрос ниже, чтобы посмотреть правильный ответ.</div>
+            </div>
+
+            <!-- Область для динамического добавления элементов -->
+            <div id="dom-dynamic-area" class="dom-dynamic-area">
+                <!-- Вертикальная колонка блоков с вопросами -->
+                <div id="dom-questions-col" class="dom-questions-col"></div>
+
+                <!-- Горизонтальный ряд блоков с ответами -->
+                <div id="dom-answers-row" class="dom-answers-row"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 Карпенко М.Е. Все права защищены.</p>
+    </footer>
+
+    <script src="scripts/dom-test.js"></script>
 </body>
 </html>

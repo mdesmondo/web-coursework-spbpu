@@ -1,0 +1,238 @@
+/* =========================================================
+   Задание 3. DOM-Тест (Вариант 2. Ругательства)
+   ========================================================= */
+
+/* Расширяем стандартный блок .content для комфортного размещения вопросов и ответов */
+.content.content--dom {
+    max-width: 1100px;
+}
+
+/* Основная область теста (бежевый фон как в примере ТЗ) */
+.dom-quiz {
+    background-color: #f6e7b2;
+    border: 2px solid #dfd3b8;
+    border-radius: 8px;
+    padding: 24px;
+    margin-top: 15px;
+    min-height: 460px;
+    text-align: left;
+    font-family: "Georgia", "Times New Roman", serif;
+    color: #4a3520;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Панель с кнопкой "Вопрос" */
+.dom-controls {
+    margin-bottom: 18px;
+}
+
+.dom-question-btn {
+    background-color: #93896b;
+    color: #3b2610;
+    border: 2px solid #776e54;
+    padding: 10px 42px;
+    font-size: 22px;
+    font-family: inherit;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: transform 0.2s ease, background-color 0.2s ease, opacity 0.2s ease;
+}
+
+/* При наведении блок/кнопка увеличивается (Вариант 2) */
+.dom-question-btn:hover:not(:disabled) {
+    transform: scale(1.06);
+    background-color: #a39878;
+}
+
+/* При нажатии происходит небольшое смещение в стороны — тряска (Вариант 2) */
+.dom-question-btn:active:not(:disabled) {
+    animation: domShakeHorizontal 0.35s ease-in-out;
+}
+
+.dom-question-btn:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+/* Надпись "Вопросы закончились" и статистика НАД областью динамического добавления */
+.dom-status-area {
+    background-color: #f7f1de;
+    border-left: 5px solid #776e54;
+    padding: 14px 20px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.dom-hidden {
+    display: none;
+}
+
+.dom-finished-msg {
+    font-size: 22px;
+    font-weight: bold;
+    color: #8b261d;
+    margin-bottom: 6px;
+}
+
+.dom-stats-msg {
+    font-size: 18px;
+    font-weight: bold;
+    color: #2e5927;
+    margin-bottom: 4px;
+}
+
+.dom-review-hint {
+    font-size: 15px;
+    font-style: italic;
+    color: #6b5842;
+}
+
+/* Область для динамического добавления элементов */
+.dom-dynamic-area {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 24px;
+    flex: 1;
+}
+
+/* Вариант 2: Блоки с вопросами располагаются ВЕРТИКАЛЬНО */
+.dom-questions-col {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 300px;
+    flex-shrink: 0;
+}
+
+/* Вариант 2: Блоки с ответами располагаются ГОРИЗОНТАЛЬНО */
+.dom-answers-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 16px;
+    flex: 1;
+}
+
+/* Общий вид карточек вопросов и ответов */
+.dom-question-block,
+.dom-answer-block {
+    background-color: #f5efe0;
+    border: 1px solid #dfd3b8;
+    padding: 14px 16px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.06);
+    font-size: 17px;
+    line-height: 1.35;
+    transition: transform 0.35s ease, opacity 0.5s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+    user-select: none;
+    box-sizing: border-box;
+}
+
+.dom-question-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.dom-question-block.dom-active {
+    border: 2px solid #93896b;
+    background-color: #fbf8f1;
+}
+
+.dom-question-block.dom-clickable {
+    cursor: pointer;
+}
+
+/* Вариант 2: При наведении блок увеличивается */
+.dom-question-block:hover,
+.dom-answer-block:hover {
+    transform: scale(1.06);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+    z-index: 2;
+}
+
+/* Вариант 2: Если на блок нажать, то он немного смещается в стороны (тряска) */
+@keyframes domShakeHorizontal {
+    0%   { transform: scale(1.06) translateX(0); }
+    20%  { transform: scale(1.06) translateX(-8px); }
+    40%  { transform: scale(1.06) translateX(8px); }
+    60%  { transform: scale(1.06) translateX(-6px); }
+    80%  { transform: scale(1.06) translateX(6px); }
+    100% { transform: scale(1.06) translateX(0); }
+}
+
+.dom-question-block:active,
+.dom-answer-block:active,
+.dom-shake {
+    animation: domShakeHorizontal 0.35s ease-in-out;
+}
+
+/* Карточка ответа */
+.dom-answer-block {
+    width: 210px;
+    min-height: 84px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Увеличение правильного ответа и показ пояснения */
+.dom-answer-block.dom-correct-expanded {
+    transform: scale(1.12);
+    background-color: #eef7ea;
+    border-color: #6aa84f;
+    z-index: 5;
+    cursor: default;
+}
+
+.dom-explanation {
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px dashed #8ab877;
+    font-size: 14px;
+    color: #274e13;
+}
+
+/* Маркер ответа в поле вопроса (зеленая галочка / красный крестик) */
+.dom-marker {
+    font-size: 24px;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.dom-marker.dom-correct {
+    color: #1ec71e;
+}
+
+.dom-marker.dom-incorrect {
+    color: #f02c2c;
+}
+
+/* Вариант 2: Перемещение ответов вниз средствами CSS */
+.dom-answer-block.dom-move-down {
+    transform: translateY(500px);
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Адаптивная верстка для компьютера при уменьшении окна браузера */
+@media (max-width: 900px) {
+    .dom-dynamic-area {
+        flex-direction: column;
+    }
+    .dom-questions-col {
+        width: 100%;
+    }
+    .dom-answers-row {
+        width: 100%;
+    }
+}
