@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Задание 1 по курсу верстки: рисунок динозавра средствами CSS на холсте 200x200 пикселей.">
+    <title>Задание 1. CSS-рисунок - AgentLab</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/pic.css">
+</head>
+<body>
+
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="container header-inner">
+            <a class="logo-link" href="../index.html">
+                <span class="logo"><span class="logo__core"></span></span>
+                <span class="logo-text">
+                    <span class="site-name">AgentLab</span>
+                    <span class="site-desc">учебный сайт об ИИ-агентах</span>
+                </span>
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a class="nav-link" href="../index.html">Главная</a></li>
+                    <li><a class="nav-link" href="agents.html">Как устроен агент</a></li>
+                    <li><a class="nav-link active" href="task1.html">Задание 1</a></li>
+                    <li><a class="nav-link" href="task2.html">Задание 2</a></li>
+                    <li><a class="nav-link" href="task3.html">Задание 3</a></li>
+                    <li><a class="nav-link" href="coursework.html">Описание сайта</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Основное содержимое -->
+    <main class="page-main" id="content">
+        <div class="container">
+            <nav class="breadcrumbs">
+                <ol>
+                    <li><a href="../index.html">Главная</a></li>
+                    <li><a href="../index.html#tasks">Задания</a></li>
+                    <li>Задание 1</li>
+                </ol>
+            </nav>
+
+            <article class="content-box clearfix">
+                <h1>Задание 1. Рисунок средствами CSS (вариант 1)</h1>
+                <p class="intro-text">
+                    В первой работе нужно было собрать картинку размером 200x200 пикселей без единого файла изображения
+                    или SVG - только с помощью обычных блоков HTML и таблиц стилей CSS. По первому варианту мне достался
+                    зеленый динозавр на полосатой земле под веткой с листьями.
+                </p>
+
+                <section>
+                    <h2>Результат работы</h2>
+                    <div class="demo">
+                        <p class="demo__hint">Ниже показан сам CSS-рисунок (собран из обычных тегов <code>div</code> и <code>span</code>):</p>
+                        <div class="canvas-200" role="img" aria-label="Зелёный динозавр с усиками стоит на полосатой почве, справа трава, сверху ветка с листьями">
+                            <!-- Почва -->
+                            <div class="ground"></div>
+
+                            <!-- Трава -->
+                            <div class="grass grass-1"></div>
+                            <div class="grass grass-2"></div>
+                            <div class="grass grass-3"></div>
+
+                            <!-- Ветка с листьями вверху -->
+                            <div class="branch-wrap">
+                                <div class="branch"></div>
+                                <div class="leaf leaf-1"></div>
+                                <div class="leaf leaf-2"></div>
+                                <div class="leaf leaf-3"></div>
+                            </div>
+
+                            <!-- Динозавр -->
+                            <div class="dino">
+                                <div class="tail"></div>
+                                <div class="leg leg-back"></div>
+                                <div class="foot foot-front"></div>
+                                <div class="leg leg-front"></div>
+                                <div class="foot foot-back"></div>
+                                <div class="body"></div>
+                                <div class="arm arm-back"></div>
+                                <div class="arm arm-front"></div>
+                                <div class="neck"></div>
+                                <div class="head">
+                                    <div class="antenna antenna-left"></div>
+                                    <div class="antenna antenna-right"></div>
+                                    <div class="eye eye-left"><div class="pupil"></div></div>
+                                    <div class="eye eye-right"><div class="pupil"></div></div>
+                                    <div class="nostril nostril-left"></div>
+                                    <div class="nostril nostril-right"></div>
+                                    <div class="teeth">
+                                        <span class="tooth"></span>
+                                        <span class="tooth"></span>
+                                        <span class="tooth"></span>
+                                        <span class="tooth"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Как собирался этот рисунок</h2>
+                    <figure class="img-figure img-right">
+                        <a href="../images/screens/dino.webp"><img src="../images/screens/dino.webp" width="612" height="615"
+                             alt="Увеличенный скриншот CSS-рисунка динозавра"></a>
+                        <figcaption>Рис. 1. Вид рисунка при увеличении: за счет CSS-свойств края фигур остаются четкими.</figcaption>
+                    </figure>
+                    <p>
+                        Вся сцена помещена внутрь контейнера <code>.canvas-200</code> с фиксированной шириной и высотой 200 пикселей.
+                        Чтобы внутренние детали можно было расставлять по точным координатам, самому холсту задано свойство
+                        <code>position: relative</code>, а также <code>overflow: hidden</code>, чтобы края веток и почвы не вылезали
+                        за пунктирную рамку. Нижняя полоса земли сделана одним блоком <code>.ground</code>, которому вместо кучи
+                        отдельных прямоугольников задан повторяющийся линейный градиент <code>repeating-linear-gradient</code> из
+                        желтых и оранжевых полосок шириной по 11 пикселей.
+                    </p>
+                    <p>
+                        Сам динозавр состоит примерно из двадцати вложенных блоков: отдельно идут хвост, задняя и передняя ноги,
+                        ступни, овальное туловище, передние лапки, шея и голова с мелкими деталями. Здесь я хорошо прочувствовал,
+                        как работает порядок наложения элементов в HTML: если не указывать везде <code>z-index</code> вручную,
+                        браузер рисует выше те блоки, которые идут ниже по коду. Поэтому дальнюю ногу и хвост я разместил в разметке
+                        раньше туловища (чтобы они частично прятались за животом), а ближние лапки и голову - после него.
+                    </p>
+
+                    <figure class="img-figure img-left">
+                        <a href="../images/screens/dino-debug.webp"><img src="../images/screens/dino-debug.webp" width="612" height="615"
+                             alt="Отладочный режим рисунка с подсветкой границ всех блоков"></a>
+                        <figcaption>Рис. 2. Режим отладки в браузере с включенными границами каждого div-блока.</figcaption>
+                    </figure>
+                    <p>
+                        Когда подгоняешь десятки мелких деталей с поворотом через <code>transform: rotate()</code>, на глаз бывает
+                        трудно понять, где именно находятся настоящие границы блока. Во время верстки мне очень помог простой
+                        прием: временно прописать для всех элементов <code>outline: 1px dashed red</code> (или включить подсветку
+                        сетки в инспекторе браузера). На втором скриншоте как раз видно, из каких прямоугольников на самом деле
+                        сложена картинка.
+                    </p>
+                    <p>
+                        Чтобы динозавр не выглядел совсем плоской аппликацией, для тела, головы и лап использован радиальный градиент
+                        <code>radial-gradient</code> со смещенным центром свечения. За счет этого середина фигуры получается светло-зеленой,
+                        а к краям цвет плавно уходит в более темный оттенок.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>Основные приемы CSS для создания фигур</h2>
+                    <figure class="img-figure img-right">
+                        <a href="../images/diagrams/css-shapes.svg"><img src="../images/diagrams/css-shapes.svg" width="640" height="420"
+                             alt="Четыре базовых приема рисования фигур на CSS"></a>
+                        <figcaption>Рис. 3. Четыре базовых приема: эллипс, форма листа, треугольник из рамок и изогнутая дуга.</figcaption>
+                    </figure>
+                    <p>
+                        Несмотря на то что в HTML любой тег изначально представляет собой обычный прямоугольник, из него можно
+                        получить почти любую простую геометрическую фигуру с помощью четырех стандартных приемов:
+                    </p>
+                    <ul>
+                        <li><strong>Круги и эллипсы</strong> (глаза, зрачки, ноздри, туловище) получаются за счет скругления <code>border-radius: 50%</code>.</li>
+                        <li><strong>Листья на ветке</strong> сделаны из прямоугольников, у которых сильно скруглены только два противоположных угла: <code>border-radius: 0 100% 0 100%</code>.</li>
+                        <li><strong>Острые зубы</strong> сверстаны классическим трюком с рамками: самому элементу <code>.tooth</code> ставятся нулевые ширина и высота, верхняя рамка заливается желтым цветом, а левая и правая делаются прозрачными (<code>transparent</code>).</li>
+                        <li><strong>Стебли травы, усики и ветка</strong> - это пустые блоки с прозрачным фоном, у которых включена только одна или две соседние стороны рамки (например, верхняя и левая) вместе со скруглением угла.</li>
+                    </ul>
+                    <figure class="img-figure img-left">
+                        <a href="../images/diagrams/positioning.svg"><img src="../images/diagrams/positioning.svg" width="640" height="420"
+                             alt="Схема отсчета координат bottom и left на холсте 200x200"></a>
+                        <figcaption>Рис. 4. Отсчет координат от нижнего левого угла через свойства bottom и left.</figcaption>
+                    </figure>
+                    <p>
+                        Еще одно удобное решение в этой работе - позиционировать части динозавра через <code>bottom</code> и
+                        <code>left</code>, то есть отсчитывать высоту снизу от земли, а не сверху. Так как высота полосатой почвы
+                        равна 45 пикселям, достаточно было поставить ногам координату около <code>bottom: 35px</code>, и персонаж
+                        сразу ровно встал на землю.
+                    </p>
+                </section>
+
+                <nav class="pager">
+                    <a href="../index.html#tasks">&larr; Ко всем заданиям</a>
+                    <a href="task2.html">Задание 2. Flexbox-ролик &rarr;</a>
+                </nav>
+            </article>
+        </div>
+    </main>
+
+    <!-- Подвал сайта -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <span class="logo logo--sm"><span class="logo__core"></span></span>
+                    <p>AgentLab - учебный сайт об устройстве ИИ-агентов. Выполнен в рамках дисциплины "Верстка и прототипирование сайтов", СПбПУ.</p>
+                </div>
+                <nav>
+                    <h2>Навигация</h2>
+                    <ul>
+                        <li><a href="agents.html">Как устроен агент</a></li>
+                        <li><a href="task1.html">Задания 1-3</a></li>
+                        <li><a href="coursework.html">Описание сайта</a></li>
+                    </ul>
+                </nav>
+                <div>
+                    <h2>Ссылки</h2>
+                    <ul>
+                        <li><a href="https://github.com/mdesmondo/web-coursework-spbpu">Репозиторий проекта на GitHub</a></li>
+                        <li><a href="../index.html#feedback">Форма обратной связи</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p class="footer-copy">&copy; 2026 Карпенко М.Е.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

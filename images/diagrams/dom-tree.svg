@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="660" height="420" viewBox="0 0 660 420">
+<title>Дерево DOM теста</title>
+<defs>
+  <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0 0L10 5L0 10z" fill="#10162b"/>
+  </marker>
+  <marker id="arr-a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0 0L10 5L0 10z" fill="#5b4bff"/>
+  </marker>
+  <marker id="arr-t" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+    <path d="M0 0L10 5L0 10z" fill="#12b5a5"/>
+  </marker>
+</defs>
+<rect width="660" height="420" fill="#ffffff"/>
+<g font-family="system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif">
+<text x="24" y="36" font-size="18" fill="#10162b" font-weight="700" text-anchor="start">DOM теста</text>
+<line x1="320" y1="92" x2="130" y2="124" stroke="#5b6475" stroke-width="1.5"/>
+<line x1="320" y1="92" x2="320" y2="124" stroke="#5b6475" stroke-width="1.5"/>
+<line x1="320" y1="92" x2="510" y2="124" stroke="#5b6475" stroke-width="1.5"/>
+<line x1="510" y1="172" x2="420" y2="204" stroke="#5b6475" stroke-width="1.5"/>
+<line x1="510" y1="172" x2="590" y2="204" stroke="#5b6475" stroke-width="1.5"/>
+<line x1="420" y1="252" x2="380" y2="284" stroke="#5b6475" stroke-width="1.5"/>
+<line x1="420" y1="252" x2="470" y2="284" stroke="#5b6475" stroke-width="1.5"/>
+<line x1="590" y1="252" x2="560" y2="284" stroke="#5b6475" stroke-width="1.5"/>
+<line x1="590" y1="252" x2="620" y2="284" stroke="#5b6475" stroke-width="1.5"/>
+<rect x="267.5" y="60" width="105" height="32" rx="7" fill="#ffffff" stroke="#10162b" stroke-width="2"/><text x="320" y="81" font-size="13" fill="#10162b" font-weight="600" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" xml:space="preserve">.dom-quiz</text>
+<rect x="59.5" y="124" width="141" height="32" rx="7" fill="#ffffff" stroke="#10162b" stroke-width="2"/><text x="130" y="145" font-size="13" fill="#10162b" font-weight="600" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" xml:space="preserve">.dom-controls</text>
+<rect x="236" y="124" width="168" height="32" rx="7" fill="#ffffff" stroke="#10162b" stroke-width="2"/><text x="320" y="145" font-size="13" fill="#10162b" font-weight="600" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" xml:space="preserve">.dom-status-area</text>
+<rect x="421.5" y="124" width="177" height="32" rx="7" fill="#ffffff" stroke="#10162b" stroke-width="2"/><text x="510" y="145" font-size="13" fill="#10162b" font-weight="600" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" xml:space="preserve">.dom-dynamic-area</text>
+<rect x="91" y="188" width="78" height="32" rx="7" fill="#ffffff" stroke="#10162b" stroke-width="2"/><text x="130" y="209" font-size="13" fill="#10162b" font-weight="600" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" xml:space="preserve">button</text>
+<line x1="130" y1="156" x2="130" y2="188" stroke="#5b6475" stroke-width="1.5"/>
+<rect x="349.5" y="204" width="141" height="32" rx="7" fill="#ffffff" stroke="#10162b" stroke-width="2"/><text x="420" y="225" font-size="13" fill="#10162b" font-weight="600" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" xml:space="preserve">questions-col</text>
+<rect x="528.5" y="204" width="123" height="32" rx="7" fill="#ffffff" stroke="#10162b" stroke-width="2"/><text x="590" y="225" font-size="13" fill="#10162b" font-weight="600" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" xml:space="preserve">answers-row</text>
+<rect x="341" y="284" width="78" height="32" rx="7" fill="#e3f7f4" stroke="#12b5a5" stroke-width="2" stroke-dasharray="5 4"/><text x="380" y="305" font-size="13" fill="#10162b" font-weight="600" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" xml:space="preserve">вопрос</text>
+<rect x="431" y="284" width="78" height="32" rx="7" fill="#e3f7f4" stroke="#12b5a5" stroke-width="2" stroke-dasharray="5 4"/><text x="470" y="305" font-size="13" fill="#10162b" font-weight="600" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" xml:space="preserve">вопрос</text>
+<rect x="525.5" y="284" width="69" height="32" rx="7" fill="#e3f7f4" stroke="#12b5a5" stroke-width="2" stroke-dasharray="5 4"/><text x="560" y="305" font-size="13" fill="#10162b" font-weight="600" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" xml:space="preserve">ответ</text>
+<rect x="603.5" y="284" width="33" height="32" rx="7" fill="#e3f7f4" stroke="#12b5a5" stroke-width="2" stroke-dasharray="5 4"/><text x="620" y="305" font-size="13" fill="#10162b" font-weight="600" text-anchor="middle" font-family="ui-monospace, Menlo, Consolas, monospace" xml:space="preserve">…</text>
+<rect x="30" y="350" width="22" height="18" rx="4" fill="#ffffff" stroke="#10162b" stroke-width="2"/>
+<text x="62" y="364" font-size="13" fill="#5b6475" font-weight="400" text-anchor="start">есть в HTML</text>
+<rect x="200" y="350" width="22" height="18" rx="4" fill="#e3f7f4" stroke="#12b5a5" stroke-width="2" stroke-dasharray="5 4"/>
+<text x="232" y="364" font-size="13" fill="#5b6475" font-weight="400" text-anchor="start">создаёт createElement()</text>
+<text x="30" y="400" font-size="14" fill="#10162b" font-weight="600" text-anchor="start">Текст вставляется через textContent, вид меняется только классами.</text>
+</g>
+</svg>

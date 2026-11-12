@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Учебный сайт AgentLab об устройстве ИИ-агентов и выполненные задания по курсу верстки сайтов (СПбПУ).">
+    <title>AgentLab - учебный сайт об ИИ-агентах</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="container header-inner">
+            <a class="logo-link" href="index.html">
+                <span class="logo"><span class="logo__core"></span></span>
+                <span class="logo-text">
+                    <span class="site-name">AgentLab</span>
+                    <span class="site-desc">учебный сайт об ИИ-агентах</span>
+                </span>
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a class="nav-link active" href="index.html">Главная</a></li>
+                    <li><a class="nav-link" href="pages/agents.html">Как устроен агент</a></li>
+                    <li><a class="nav-link" href="pages/task1.html">Задание 1</a></li>
+                    <li><a class="nav-link" href="pages/task2.html">Задание 2</a></li>
+                    <li><a class="nav-link" href="pages/task3.html">Задание 3</a></li>
+                    <li><a class="nav-link" href="pages/coursework.html">Описание сайта</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Основное содержимое -->
+    <main class="page-main" id="content">
+        <div class="container">
+
+            <!-- Первый экран лэндинга -->
+            <section class="hero-block">
+                <div class="hero-grid">
+                    <div>
+                        <h1>Как устроены ИИ-агенты: от обычной нейросети до помощника с инструментами</h1>
+                        <p>
+                            Привет! Это мой учебный сайт <strong>AgentLab</strong>, который я сверстал в рамках курса
+                            "Верстка и прототипирование сайтов" в СПбПУ. Когда нужно было выбрать произвольную тему для сайта,
+                            я решил разобрать тему ИИ-агентов - программ на базе языковых моделей (LLM), которые умеют не просто
+                            болтать в чате, а сами вызывать функции, искать информацию в документах и выполнять многошаговые задачи.
+                        </p>
+                        <p>
+                            Кроме основных статей по теме здесь собраны все мои практические работы за семестр (CSS-рисунок,
+                            сценка на Flexbox и интерактивный тест на JavaScript), а также страница с подробным разбором макета и верстки.
+                        </p>
+                        <div class="hero-buttons">
+                            <a class="btn" href="pages/agents.html">Перейти к статье об агентах</a>
+                            <a class="btn btn-secondary" href="#tasks">Смотреть задания</a>
+                        </div>
+                    </div>
+                    <figure class="img-figure">
+                        <img src="images/diagrams/agent-loop.svg" width="640" height="420"
+                             alt="Схема работы ИИ-агента в цикле">
+                        <figcaption>Базовый цикл работы агента: рассуждение, вызов инструмента и проверка результата.</figcaption>
+                    </figure>
+                </div>
+            </section>
+
+            <!-- Текстовый раздел с картинками внутри текста -->
+            <section class="home-section" id="about">
+                <article class="content-box clearfix">
+                    <h2>В чем разница между обычным чат-ботом и ИИ-агентом</h2>
+
+                    <figure class="img-figure img-right">
+                        <img src="images/diagrams/chat-vs-agent.svg" width="560" height="380"
+                             alt="Сравнение обычного чат-бота и агента">
+                        <figcaption>Рис. 1. Чат-бот просто отвечает на сообщение, а агент работает по шагам до достижения цели.</figcaption>
+                    </figure>
+
+                    <p>
+                        Когда мы открываем обычный чат с нейросетью и пишем туда вопрос, все происходит в один шаг:
+                        модель читает наш текст, предсказывает наиболее вероятное продолжение и выдает ответ на экран.
+                        На этом ее работа заканчивается. У такого подхода есть понятные минусы: языковая модель не знает,
+                        что произошло сегодня утром, не может заглянуть в закрытую базу данных университета или компании,
+                        а при сложных вычислениях в столбик легко ошибается, потому что она просто угадывает слова, а не считает.
+                    </p>
+                    <p>
+                        ИИ-агент решает эту проблему за счет того, что вокруг самой модели достраивается программная обвязка.
+                        Агенту дают не просто вопрос, а конкретную цель - например, "проверь, есть ли в репозитории ошибки в верстке,
+                        и составь список замечаний". Получив такую задачу, модель не спешит сразу писать финальный ответ. Сначала она
+                        составляет план действий, затем выбирает нужный внешний инструмент (например, чтение файла или поиск по базе),
+                        запускает его через программу-обертку, читает полученный ответ и решает, какой шаг сделать следующим.
+                    </p>
+
+                    <figure class="img-figure img-left">
+                        <img src="images/diagrams/tool-calling.svg" width="640" height="420"
+                             alt="Схема вызова функции через JSON">
+                        <figcaption>Рис. 2. Подключение инструментов (Tool Calling): модель формирует JSON-запрос, а код выполняет функцию.</figcaption>
+                    </figure>
+
+                    <p>
+                        Самое интересное тут то, что нейросеть сама по себе не умеет нажимать кнопки или запускать скрипты.
+                        Чтобы дать ей "руки", программист описывает список доступных функций и передает это описание в системном промпте.
+                        Если во время решения задачи модели нужно узнать погоду, посчитать выражение в Python или достать строчку из SQL-таблицы,
+                        она возвращает специальный JSON-объект с именем функции и параметрами. Наше приложение перехватывает этот JSON,
+                        выполняет реальный код и возвращает результат обратно в диалог.
+                    </p>
+                    <p>
+                        За счет такого цикла агент может сам замечать и исправлять свои ошибки. Допустим, он написал поисковый запрос
+                        к документации, но поиск вернул пустой список. Обычный бот на этом месте либо скажет, что ничего не знает,
+                        либо начнет выдумывать факты из головы (галлюцинировать). Агент же увидит пустой результат, поменяет ключевые слова
+                        и попробует поискать еще раз. Конечно, чтобы программа не ушла в бесконечный цикл, разработчики обязательно ставят
+                        ограничение на максимальное число шагов и проверяют все опасные действия перед выполнением.
+                    </p>
+
+                    <div class="img-row">
+                        <figure class="img-figure">
+                            <img src="images/diagrams/memory-rag.svg" width="640" height="420"
+                                 alt="Схема поиска по документам RAG">
+                            <figcaption>Рис. 3. Долгосрочная память агента через поиск по документам (RAG).</figcaption>
+                        </figure>
+                        <figure class="img-figure">
+                            <img src="images/diagrams/multi-agent.svg" width="640" height="420"
+                                 alt="Схема взаимодействия нескольких агентов">
+                            <figcaption>Рис. 4. Разделение ролей в мультиагентной системе.</figcaption>
+                        </figure>
+                    </div>
+
+                    <p>
+                        На отдельной странице <a href="pages/agents.html">"Как устроен агент"</a> я подробно разобрал все пять основных
+                        составляющих такой системы: цикл рассуждений ReAct, механизм вызова инструментов, подключение базы знаний через RAG,
+                        командную работу нескольких агентов и автоматическое тестирование (эвалы). А ниже можно перейти к выполненным
+                        учебным заданиям по курсу верстки.
+                    </p>
+
+                    <div class="facts-row">
+                        <div class="fact-item">
+                            <span class="fact-num">5 тем</span>
+                            <span>разобрано в основной статье: цикл ReAct, функции, память RAG, мультиагенты и тестирование</span>
+                        </div>
+                        <div class="fact-item">
+                            <span class="fact-num">3 работы</span>
+                            <span>выполнено по курсу: рисунок на CSS, интерактивный ролик на Flexbox и тест по DOM API</span>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <!-- Блок с карточками лабораторных заданий -->
+            <section class="home-section" id="tasks">
+                <div class="content-box">
+                    <h2>Выполненные задания и описание проекта</h2>
+                    <p class="intro-text">
+                        Каждая лабораторная работа размещена на своей странице. Там можно посмотреть живой результат
+                        в браузере и прочитать мой разбор того, какие свойства CSS и методы JavaScript использовались при верстке.
+                    </p>
+                    <ul class="cards-grid">
+                        <li>
+                            <article class="task-card">
+                                <img class="task-card-img" src="images/screens/dino.webp" width="612" height="615"
+                                     alt="Динозавр, нарисованный средствами CSS">
+                                <div class="task-card-body">
+                                    <span class="task-card-tag">Задание 1</span>
+                                    <h3 class="task-card-title">CSS-рисунок (вариант 1)</h3>
+                                    <p class="task-card-desc">Рисунок динозавра на поле 200x200 пикселей только из блочных элементов div, рамок, скруглений и градиентов.</p>
+                                    <a class="task-card-link" href="pages/task1.html">Смотреть задание 1 &rarr;</a>
+                                </div>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="task-card">
+                                <img class="task-card-img" src="images/screens/roller-active.webp" width="400" height="402"
+                                     alt="Сценка на Flexbox с принцем и принцессой">
+                                <div class="task-card-body">
+                                    <span class="task-card-tag">Задание 2</span>
+                                    <h3 class="task-card-title">Flexbox-ролик (вариант 3)</h3>
+                                    <p class="task-card-desc">Анимированная сценка про принца и лягушку на флексах. Переключение кадров работает через :hover и :active без JS.</p>
+                                    <a class="task-card-link" href="pages/task2.html">Смотреть задание 2 &rarr;</a>
+                                </div>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="task-card">
+                                <img class="task-card-img" src="images/screens/quiz-answer.webp" width="942" height="513"
+                                     alt="Интерактивный DOM-тест в браузере">
+                                <div class="task-card-body">
+                                    <span class="task-card-tag">Задание 3</span>
+                                    <h3 class="task-card-title">DOM-тест (вариант 2)</h3>
+                                    <p class="task-card-desc">Викторина "Старинные ругательства", где все карточки вопросов и ответов динамически создаются через JavaScript.</p>
+                                    <a class="task-card-link" href="pages/task3.html">Смотреть задание 3 &rarr;</a>
+                                </div>
+                            </article>
+                        </li>
+                        <li>
+                            <article class="task-card">
+                                <img class="task-card-img" src="images/diagrams/wireframe-desktop.svg" width="640" height="400"
+                                     alt="Схема макета страницы сайта">
+                                <div class="task-card-body">
+                                    <span class="task-card-tag">О проекте</span>
+                                    <h3 class="task-card-title">Описание верстки сайта</h3>
+                                    <p class="task-card-desc">Разбор макета, структуры папок, адаптивности, логотипа на чистом CSS и подготовки к курсу серверного программирования.</p>
+                                    <a class="task-card-link" href="pages/coursework.html">Открыть описание &rarr;</a>
+                                </div>
+                            </article>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Форма обратной связи (задел под серверное программирование) -->
+            <section class="home-section" id="feedback">
+                <div class="content-box">
+                    <h2>Форма обратной связи</h2>
+                    <p>
+                        Эту форму я добавил специально с расчетом на следующий семестр, где этот же сайт будет использоваться
+                        в курсе серверного программирования. У всех полей прописаны атрибуты <code>name</code>, а отправка
+                        настроена методом POST на адрес <code>/api/feedback</code>. Пока бэкенд не подключен, скрипт перехватывает
+                        отправку и выводит подсказку.
+                    </p>
+                    <form class="feedback-form" id="feedback-form" action="/api/feedback" method="post" data-endpoint="/api/feedback">
+                        <div class="form-group">
+                            <label for="feedback-name">Ваше имя</label>
+                            <input id="feedback-name" name="name" type="text" placeholder="Например, Иван" required maxlength="80">
+                        </div>
+                        <div class="form-group">
+                            <label for="feedback-email">Электронная почта</label>
+                            <input id="feedback-email" name="email" type="email" placeholder="example@mail.ru" required>
+                        </div>
+                        <div class="form-group form-group-full">
+                            <label for="feedback-topic">Раздел сайта</label>
+                            <select id="feedback-topic" name="topic">
+                                <option value="agents">Статья про ИИ-агентов</option>
+                                <option value="tasks">Лабораторные задания 1-3</option>
+                                <option value="coursework">Верстка и устройство сайта</option>
+                            </select>
+                        </div>
+                        <div class="form-group form-group-full">
+                            <label for="feedback-message">Текст сообщения или вопрос</label>
+                            <textarea id="feedback-message" name="message" rows="4" placeholder="Напишите ваш вопрос или комментарий..." required maxlength="2000"></textarea>
+                        </div>
+                        <div class="form-group form-check form-group-full">
+                            <input id="feedback-agree" name="agree" type="checkbox" required>
+                            <label for="feedback-agree">Согласен на обработку введенных данных</label>
+                        </div>
+                        <div class="form-group">
+                            <button class="btn" type="submit">Отправить сообщение</button>
+                        </div>
+                        <p class="form-status" id="feedback-status"></p>
+                    </form>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Подвал сайта -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <span class="logo logo--sm"><span class="logo__core"></span></span>
+                    <p>AgentLab - учебный сайт об устройстве ИИ-агентов. Выполнен в рамках дисциплины "Верстка и прототипирование сайтов", СПбПУ.</p>
+                </div>
+                <nav>
+                    <h2>Навигация</h2>
+                    <ul>
+                        <li><a href="pages/agents.html">Как устроен агент</a></li>
+                        <li><a href="pages/task1.html">Задания 1-3</a></li>
+                        <li><a href="pages/coursework.html">Описание сайта</a></li>
+                    </ul>
+                </nav>
+                <div>
+                    <h2>Ссылки</h2>
+                    <ul>
+                        <li><a href="https://github.com/mdesmondo/web-coursework-spbpu">Репозиторий проекта на GitHub</a></li>
+                        <li><a href="index.html#feedback">Форма обратной связи</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p class="footer-copy">&copy; 2026 Карпенко М.Е.</p>
+        </div>
+    </footer>
+
+    <script src="scripts/feedback-form.js"></script>
+</body>
+</html>

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Описание учебного сайта AgentLab: разработка макета, физическая и логическая структура, логотип на CSS и подготовка к серверной части.">
+    <title>Описание сайта - AgentLab</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+    <!-- Шапка сайта -->
+    <header class="header">
+        <div class="container header-inner">
+            <a class="logo-link" href="../index.html">
+                <span class="logo"><span class="logo__core"></span></span>
+                <span class="logo-text">
+                    <span class="site-name">AgentLab</span>
+                    <span class="site-desc">учебный сайт об ИИ-агентах</span>
+                </span>
+            </a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a class="nav-link" href="../index.html">Главная</a></li>
+                    <li><a class="nav-link" href="agents.html">Как устроен агент</a></li>
+                    <li><a class="nav-link" href="task1.html">Задание 1</a></li>
+                    <li><a class="nav-link" href="task2.html">Задание 2</a></li>
+                    <li><a class="nav-link" href="task3.html">Задание 3</a></li>
+                    <li><a class="nav-link active" href="coursework.html">Описание сайта</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Основное содержимое -->
+    <main class="page-main" id="content">
+        <div class="container">
+            <nav class="breadcrumbs">
+                <ol>
+                    <li><a href="../index.html">Главная</a></li>
+                    <li>Описание сайта</li>
+                </ol>
+            </nav>
+
+            <div class="page-grid">
+                <article class="content-box clearfix">
+                    <h1>Описание разработки и верстки сайта AgentLab</h1>
+                    <p class="intro-text">
+                        На этой странице я описал, как проектировал и верстал этот учебный сайт по дисциплине
+                        "Верстка и прототипирование сайтов": от первых набросков макета и структуры папок до реализации
+                        собственного логотипа на чистом CSS и подготовки к курсу серверного программирования.
+                    </p>
+
+                    <section id="mockup">
+                        <h2>1. Проектирование макета</h2>
+                        <figure class="img-figure img-wide">
+                            <a href="../images/diagrams/wireframe-desktop.svg"><img src="../images/diagrams/wireframe-desktop.svg" width="640" height="400"
+                                 alt="Схема макета страницы для настольного компьютера"></a>
+                            <figcaption>Рис. 1. Схема расположения основных блоков на широком экране монитора.</figcaption>
+                        </figure>
+                        <p>
+                            Перед тем как писать HTML и CSS, я продумал общую сетку страниц и набросал схему макета для компьютера
+                            и для смартфона. Мне хотелось, чтобы сайт выглядел аккуратно, легко читался и при этом содержал все
+                            обязательные элементы из задания: шапку (<code>header</code>) с логотипом и меню навигации, основную
+                            рабочую часть (<code>main</code>), боковую колонку с быстрыми ссылками (<code>aside</code>) и подвал
+                            (<code>footer</code>).
+                        </p>
+                        <figure class="img-figure img-left img-narrow">
+                            <a href="../images/diagrams/wireframe-mobile.svg"><img src="../images/diagrams/wireframe-mobile.svg" width="320" height="480"
+                                 alt="Схема макета для мобильного экрана"></a>
+                            <figcaption>Рис. 2. Перестроение блоков в одну колонку на узком экране.</figcaption>
+                        </figure>
+                        <p>
+                            Главная страница построена по принципу лэндинга: сверху идет приветственный блок с кратким введением
+                            в тему ИИ-агентов и схемой, затем текстовый раздел с иллюстрациями, блок карточек для перехода ко всем
+                            лабораторным работам и форма обратной связи. А внутренние страницы со статьей и заданиями оформлены как
+                            полноценные учебные материалы с хлебными крошками, большими текстовыми блоками, картинками с обтеканием
+                            и переключением между соседними работами.
+                        </p>
+                        <p>
+                            На маленьких экранах двухколоночная сетка автоматически перестраивается в одну вертикальную колонку:
+                            меню в шапке переносится на новую строку под логотип, боковая панель уходит вниз под статью, а картинки
+                            внутри текста перестают обтекаться сбоку и встают по центру на всю ширину экрана.
+                        </p>
+                    </section>
+
+                    <section id="structure">
+                        <h2>2. Физическая и логическая структура</h2>
+                        <figure class="img-figure img-wide">
+                            <a href="../images/diagrams/site-structure.svg"><img src="../images/diagrams/site-structure.svg" width="640" height="420"
+                                 alt="Схема файлов и папок проекта"></a>
+                            <figcaption>Рис. 3. Организация файлов в папках проекта и связи между страницами.</figcaption>
+                        </figure>
+                        <p>
+                            Чтобы в проекте не было путаницы, все файлы разложены по отдельным папкам по своему назначению.
+                            В самом корне лежит точка входа <code>index.html</code> (и обзорная страница <code>tasks.html</code>),
+                            все внутренние страницы вынесены в каталог <code>pages/</code>, таблицы стилей лежат в <code>css/</code>,
+                            скрипты в <code>scripts/</code>, а графика в <code>images/</code> (внутри нее отдельно лежат векторные
+                            схемы <code>diagrams/</code> и скриншоты <code>screens/</code>). Все пути к стилям и картинкам прописаны
+                            относительными ссылками, поэтому сайт без проблем открывается как просто из папки на компьютере, так и
+                            после выгрузки на хостинг GitHub Pages.
+                        </p>
+                        <p>
+                            Логическая структура документа на каждой странице опирается на семантические теги HTML5:
+                            <code>header</code>, <code>nav</code>, <code>main</code>, <code>article</code>, <code>section</code>,
+                            <code>aside</code>, <code>figure</code> с подписью <code>figcaption</code> и <code>footer</code>.
+                            Табличная верстка нигде не используется - вся раскладка собрана на современных технологиях Flexbox
+                            и CSS Grid, а для встраивания картинок непосредственно в текстовые абзацы применено классическое
+                            свойство <code>float: left</code> и <code>float: right</code> с очисткой потока <code>clear: both</code>.
+                        </p>
+                    </section>
+
+                    <section id="style">
+                        <h2>3. Единый стиль оформления</h2>
+                        <figure class="img-figure img-left">
+                            <a href="../images/diagrams/design-tokens.svg"><img src="../images/diagrams/design-tokens.svg" width="640" height="420"
+                                 alt="Цветовая палитра и шрифты сайта"></a>
+                            <figcaption>Рис. 4. Основные цвета, шрифты и примеры карточек, используемые на всех страницах.</figcaption>
+                        </figure>
+                        <p>
+                            Весь общий дизайн вынесен в единый файл <code>css/style.css</code>, который подключается на каждой
+                            странице сайта. За счет этого шапка, навигационное меню, подвал, кнопки, карточки и текстовые блоки
+                            везде выглядят одинаково. При этом исходные файлы стилей самих лабораторных работ (<code>pic.css</code>,
+                            <code>flex.css</code> и <code>dom.css</code>) лежат отдельно и подключаются только на своих страницах,
+                            чтобы не мешать друг другу.
+                        </p>
+                        <p>
+                            Для оформления я выбрал спокойную учебную палитру: темно-синий цвет (<code>#1f2942</code>) для шапки
+                            и подвала, светло-серый фон страницы (<code>#f2f4f8</code>), белые карточки контента с тонкой рамкой
+                            и ярко-синий акцент (<code>#3b5bdb</code>) для активных пунктов меню, кнопок и ссылок. В логотипе и
+                            метках карточек дополнительно используется мятно-зеленый цвет (<code>#38d9a9</code>).
+                        </p>
+                    </section>
+
+                    <section id="logo">
+                        <h2>4. Собственный логотип средствами CSS</h2>
+                        <div class="demo">
+                            <p class="demo__hint">Демонстрация CSS-логотипа в трех размерах (36px, 48px и 70px). При наведении курсора антенна и глаза меняют цвет:</p>
+                            <div class="logo-showcase">
+                                <span class="logo logo--sm"><span class="logo__core"></span></span>
+                                <span class="logo"><span class="logo__core"></span></span>
+                                <span class="logo logo--lg"><span class="logo__core"></span></span>
+                            </div>
+                        </div>
+                        <p>
+                            По условию задания логотип нужно было разработать самому и сверстать исключительно средствами CSS
+                            с базовым размером в пределах от 30 до 80 пикселей, ориентируясь на тематику сайта. Так как сайт
+                            посвящен ИИ-агентам, я решил сделать логотип в виде стилизованной головы робота-агента с экранчиком
+                            и антенной связи.
+                        </p>
+                        <p>
+                            Базовый размер иконки в шапке составляет <strong>48x48 пикселей</strong> (в подвале используется уменьшенная
+                            версия 36px через <code>transform: scale(0.75)</code>). Сам корпус - это квадратный блок <code>.logo</code>
+                            со скругленными углами и синим фоном. Псевдоэлемент <code>::before</code> рисует белую ножку антенны сверху,
+                            а <code>::after</code> - круглый зеленый индикатор сигнала. Внутри расположен элемент <code>.logo__core</code>,
+                            который изображает темный экранчик, а его псевдоэлементы <code>::before</code> и <code>::after</code> рисуют
+                            два светящихся глаза. При наведении мыши логотип слегка наклоняется, а глаза и антенна загораются желтым цветом.
+                        </p>
+                    </section>
+
+                    <section id="adaptive">
+                        <h2>5. Адаптивность и проверка на разных экранах</h2>
+                        <p>
+                            Чтобы сайт нормально открывался и на ноутбуке, и на телефоне, я использовал резиновую сетку с максимальной
+                            шириной контейнера <code>1100px</code> и три медиазапроса (на <code>920px</code>, <code>780px</code> и
+                            <code>640px</code>). Карточки заданий на главной странице сверстаны через <code>grid-template-columns:
+                            repeat(auto-fill, minmax(240px, 1fr))</code>, поэтому при сужении окна браузера они сами плавно
+                            перестраиваются из четырех в ряд в две, а затем в одну колонку.
+                        </p>
+                    </section>
+
+                    <section id="backend">
+                        <h2>6. Использование сайта в курсе серверного программирования</h2>
+                        <p>
+                            В требованиях указано, что этот сайт в дальнейшем можно будет использовать на курсе серверного
+                            программирования. Поэтому при верстке я сразу заложил несколько удобных моментов под будущий бэкенд
+                            (например, на Python FastAPI или Flask):
+                        </p>
+                        <ul>
+                            <li>Шапка и подвал на всех страницах имеют одинаковую разметку, так что их можно сразу вынести в общий шаблон <code>base.html</code> шаблонизатора Jinja2.</li>
+                            <li>На главной странице сверстана форма обратной связи с атрибутами <code>name</code> у каждого поля и отправкой POST-запроса на маршрут <code>/api/feedback</code>.</li>
+                            <li>В третьем задании массив вопросов викторины отделен от логики отрисовки DOM, поэтому вместо локального массива вопросы можно легко загружать с сервера через <code>fetch('/api/quiz')</code>.</li>
+                        </ul>
+                        <pre><code>app/
+  main.py          # сервер на FastAPI (маршруты страниц и обработчик /api/feedback)
+  templates/
+    base.html      # общая шапка и подвал сайта
+    index.html     # главная страница, расширяющая base.html
+  static/          # папки css/, scripts/ и images/</code></pre>
+                    </section>
+                </article>
+
+                <aside class="sidebar-box">
+                    <h2>Разделы описания</h2>
+                    <ul>
+                        <li><a href="#mockup">1. Макет сайта</a></li>
+                        <li><a href="#structure">2. Структура папок</a></li>
+                        <li><a href="#style">3. Единый стиль</a></li>
+                        <li><a href="#logo">4. CSS-логотип</a></li>
+                        <li><a href="#adaptive">5. Адаптивность</a></li>
+                        <li><a href="#backend">6. Серверная часть</a></li>
+                    </ul>
+                    <h2>Информация о работе</h2>
+                    <dl>
+                        <dt>Студент</dt>
+                        <dd>Карпенко М.Е.</dd>
+                        <dt>Дисциплина</dt>
+                        <dd>Верстка и прототипирование сайтов, СПбПУ</dd>
+                        <dt>Инструменты</dt>
+                        <dd>HTML5, CSS3 (Flexbox, Grid), JavaScript</dd>
+                        <dt>Хостинг</dt>
+                        <dd>GitHub Pages</dd>
+                    </dl>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- Подвал сайта -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <span class="logo logo--sm"><span class="logo__core"></span></span>
+                    <p>AgentLab - учебный сайт об устройстве ИИ-агентов. Выполнен в рамках дисциплины "Верстка и прототипирование сайтов", СПбПУ.</p>
+                </div>
+                <nav>
+                    <h2>Навигация</h2>
+                    <ul>
+                        <li><a href="agents.html">Как устроен агент</a></li>
+                        <li><a href="task1.html">Задания 1-3</a></li>
+                        <li><a href="coursework.html">Описание сайта</a></li>
+                    </ul>
+                </nav>
+                <div>
+                    <h2>Ссылки</h2>
+                    <ul>
+                        <li><a href="https://github.com/mdesmondo/web-coursework-spbpu">Репозиторий проекта на GitHub</a></li>
+                        <li><a href="../index.html#feedback">Форма обратной связи</a></li>
+                    </ul>
+                </div>
+            </div>
+            <p class="footer-copy">&copy; 2026 Карпенко М.Е.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
