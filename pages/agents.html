@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Подробный разбор того, как устроены ИИ-агенты: цикл ReAct, вызов функций, память RAG, мультиагентные системы и тестирование.">
     <title>Как устроен ИИ-агент - AgentLab</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style.css?v=4">
 </head>
 <body>
 
@@ -13,7 +13,7 @@
     <header class="header">
         <div class="container header-inner">
             <a class="logo-link" href="../index.html">
-                <span class="logo"><span class="logo__core"></span></span>
+                <span class="logo"><span class="logo-inner"></span></span>
                 <span class="logo-text">
                     <span class="site-name">AgentLab</span>
                     <span class="site-desc">учебный сайт об ИИ-агентах</span>
@@ -35,14 +35,8 @@
     <!-- Основное содержимое -->
     <main class="page-main" id="content">
         <div class="container">
-            <nav class="breadcrumbs">
-                <ol>
-                    <li><a href="../index.html">Главная</a></li>
-                    <li>Как устроен агент</li>
-                </ol>
-            </nav>
 
-            <div class="page-grid">
+<div class="page-grid">
                 <article class="content-box clearfix">
                     <h1>Как устроен современный ИИ-агент</h1>
                     <p class="intro-text">
@@ -54,8 +48,8 @@
                     <section id="loop">
                         <h2>1. Цикл рассуждения и действия (ReAct)</h2>
                         <figure class="img-figure img-wide">
-                            <a href="../images/diagrams/agent-loop.svg"><img src="../images/diagrams/agent-loop.svg" width="640" height="420"
-                                 alt="Схема цикла работы агента ReAct"></a>
+                            <img src="../images/diagrams/agent-loop.png" width="640" height="420"
+                                 alt="Схема цикла работы агента ReAct">
                             <figcaption>Рис. 1. Основной цикл работы агента: рассуждение, выбор действия и анализ полученного наблюдения.</figcaption>
                         </figure>
                         <p>
@@ -82,8 +76,8 @@
                     <section id="tools">
                         <h2>2. Подключение инструментов (Tool Calling)</h2>
                         <figure class="img-figure img-left">
-                            <a href="../images/diagrams/tool-calling.svg"><img src="../images/diagrams/tool-calling.svg" width="640" height="420"
-                                 alt="Схема вызова внешней функции через JSON"></a>
+                            <img src="../images/diagrams/tool-calling.png" width="640" height="420"
+                                 alt="Схема вызова внешней функции через JSON">
                             <figcaption>Рис. 2. Модель не запускает функции напрямую: она только формирует JSON с аргументами.</figcaption>
                         </figure>
                         <p>
@@ -108,8 +102,8 @@
                     <section id="memory">
                         <h2>3. Память и поиск по базе знаний (RAG)</h2>
                         <figure class="img-figure img-wide">
-                            <a href="../images/diagrams/memory-rag.svg"><img src="../images/diagrams/memory-rag.svg" width="640" height="420"
-                                 alt="Схема работы памяти и векторного поиска RAG"></a>
+                            <img src="../images/diagrams/memory-rag.png" width="640" height="420"
+                                 alt="Схема работы памяти и векторного поиска RAG">
                             <figcaption>Рис. 3. Работа технологии RAG: нужные куски текста подгружаются из базы прямо перед ответом.</figcaption>
                         </figure>
                         <p>
@@ -131,8 +125,8 @@
                     <section id="multi">
                         <h2>4. Планирование и мультиагентные системы</h2>
                         <figure class="img-figure img-right">
-                            <a href="../images/diagrams/multi-agent.svg"><img src="../images/diagrams/multi-agent.svg" width="640" height="420"
-                                 alt="Схема мультиагентной системы с оркестратором"></a>
+                            <img src="../images/diagrams/multi-agent.png" width="640" height="420"
+                                 alt="Схема мультиагентной системы с оркестратором">
                             <figcaption>Рис. 4. Главный агент-оркестратор разбивает задачу между специализированными помощниками.</figcaption>
                         </figure>
                         <p>
@@ -152,8 +146,8 @@
                     <section id="evals">
                         <h2>5. Как проверяют и тестируют агентов (Evals)</h2>
                         <figure class="img-figure img-wide">
-                            <a href="../images/diagrams/eval-pipeline.svg"><img src="../images/diagrams/eval-pipeline.svg" width="640" height="420"
-                                 alt="Схема автоматического тестирования агента"></a>
+                            <img src="../images/diagrams/eval-pipeline.png" width="640" height="420"
+                                 alt="Схема автоматического тестирования агента">
                             <figcaption>Рис. 5. Прогон тестового набора задач (эвалов) позволяет заметить поломки после правки промпта.</figcaption>
                         </figure>
                         <p>
@@ -195,18 +189,13 @@
                         <li><a href="#summary">Короткий вывод</a></li>
                     </ul>
                     <h2>Шпаргалка по терминам</h2>
-                    <dl>
-                        <dt>LLM</dt>
-                        <dd>большая языковая модель, обученная на текстах</dd>
-                        <dt>Промпт</dt>
-                        <dd>инструкция и входные данные, которые передаются модели</dd>
-                        <dt>Tool Call</dt>
-                        <dd>запрос модели на вызов внешней функции в формате JSON</dd>
-                        <dt>RAG</dt>
-                        <dd>поиск нужных отрывков в базе знаний перед генерацией ответа</dd>
-                        <dt>Эвал (Eval)</dt>
-                        <dd>контрольная задача для автоматической проверки качества агента</dd>
-                    </dl>
+                    <ul>
+                        <li><b>LLM</b> - большая языковая модель, обученная на текстах</li>
+                        <li><b>Промпт</b> - инструкция и входные данные, которые передаются модели</li>
+                        <li><b>Tool Call</b> - запрос модели на вызов внешней функции в формате JSON</li>
+                        <li><b>RAG</b> - поиск нужных отрывков в базе знаний перед генерацией ответа</li>
+                        <li><b>Эвал (Eval)</b> - контрольная задача для автоматической проверки качества агента</li>
+                    </ul>
                 </aside>
             </div>
         </div>
@@ -217,7 +206,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <span class="logo logo--sm"><span class="logo__core"></span></span>
+                    <span class="logo logo-small"><span class="logo-inner"></span></span>
                     <p>AgentLab - учебный сайт об устройстве ИИ-агентов. Выполнен в рамках дисциплины "Верстка и прототипирование сайтов", СПбПУ.</p>
                 </div>
                 <nav>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Задание 3 по курсу верстки: интерактивный DOM-тест на знание старинных русских слов с динамическим созданием элементов.">
     <title>Задание 3. DOM-тест - AgentLab</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style.css?v=4">
     <link rel="stylesheet" href="../css/dom.css">
 </head>
 <body>
@@ -14,7 +14,7 @@
     <header class="header">
         <div class="container header-inner">
             <a class="logo-link" href="../index.html">
-                <span class="logo"><span class="logo__core"></span></span>
+                <span class="logo"><span class="logo-inner"></span></span>
                 <span class="logo-text">
                     <span class="site-name">AgentLab</span>
                     <span class="site-desc">учебный сайт об ИИ-агентах</span>
@@ -36,15 +36,8 @@
     <!-- Основное содержимое -->
     <main class="page-main" id="content">
         <div class="container">
-            <nav class="breadcrumbs">
-                <ol>
-                    <li><a href="../index.html">Главная</a></li>
-                    <li><a href="../index.html#tasks">Задания</a></li>
-                    <li>Задание 3</li>
-                </ol>
-            </nav>
 
-            <article class="content-box clearfix">
+<article class="content-box clearfix">
                 <h1>Задание 3. Интерактивный DOM-тест "Ругательства" (вариант 2)</h1>
                 <p class="intro-text">
                     Третья лабораторная работа объединяет верстку и программирование на JavaScript. Нужно было сделать
@@ -54,8 +47,8 @@
 
                 <section>
                     <h2>Результат работы</h2>
-                    <div class="demo demo--wide">
-                        <p class="demo__hint">Нажимайте кнопку "Вопрос", чтобы получить новое задание, и выбирайте правильное значение старинного слова:</p>
+                    <div class="demo demo-wide">
+                        <p class="demo-text">Нажимайте кнопку "Вопрос", чтобы получить новое задание, и выбирайте правильное значение старинного слова:</p>
                         <div class="dom-quiz">
                             <!-- Кнопка добавления вопроса -->
                             <div class="dom-controls">
@@ -81,8 +74,8 @@
                 <section>
                     <h2>Логика работы викторины</h2>
                     <figure class="img-figure img-right">
-                        <a href="../images/screens/quiz-start.webp"><img src="../images/screens/quiz-start.webp" width="942" height="513"
-                             alt="Скриншот теста после появления первого вопроса"></a>
+                        <img src="../images/screens/quiz-start.png" width="942" height="513"
+                             alt="Скриншот теста после появления первого вопроса">
                         <figcaption>Рис. 1. После клика по кнопке "Вопрос" слева появляется плашка вопроса, а справа - карточки ответов.</figcaption>
                     </figure>
                     <p>
@@ -99,8 +92,8 @@
                     </p>
 
                     <figure class="img-figure img-left">
-                        <a href="../images/screens/quiz-answer.webp"><img src="../images/screens/quiz-answer.webp" width="942" height="513"
-                             alt="Скриншот правильного ответа с пояснением из словаря"></a>
+                        <img src="../images/screens/quiz-answer.png" width="942" height="513"
+                             alt="Скриншот правильного ответа с пояснением из словаря">
                         <figcaption>Рис. 2. При верном выборе карточка увеличивается и показывает справку из словаря Даля или Фасмера.</figcaption>
                     </figure>
                     <p>
@@ -115,8 +108,8 @@
                 <section>
                     <h2>Как устроена работа с DOM и стилями</h2>
                     <figure class="img-figure img-right">
-                        <a href="../images/diagrams/dom-tree.svg"><img src="../images/diagrams/dom-tree.svg" width="640" height="420"
-                             alt="Схема дерева DOM-элементов викторины"></a>
+                        <img src="../images/diagrams/dom-tree.png" width="640" height="420"
+                             alt="Схема дерева DOM-элементов викторины">
                         <figcaption>Рис. 3. Разделение на статический HTML-каркас и узлы, которые создаются через JavaScript.</figcaption>
                     </figure>
                     <p>
@@ -134,8 +127,8 @@
                         уводит отработанные ответы вниз с плавной задержкой <code>transitionDelay</code>.
                     </p>
                     <figure class="img-figure img-left">
-                        <a href="../images/screens/quiz-finished.webp"><img src="../images/screens/quiz-finished.webp" width="942" height="807"
-                             alt="Финальный экран теста со статистикой и просмотром ответов"></a>
+                        <img src="../images/screens/quiz-finished.png" width="942" height="807"
+                             alt="Финальный экран теста со статистикой и просмотром ответов">
                         <figcaption>Рис. 4. Завершение викторины: вывод итогового счета и просмотр правильных ответов по клику.</figcaption>
                     </figure>
                     <p>
@@ -160,7 +153,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <span class="logo logo--sm"><span class="logo__core"></span></span>
+                    <span class="logo logo-small"><span class="logo-inner"></span></span>
                     <p>AgentLab - учебный сайт об устройстве ИИ-агентов. Выполнен в рамках дисциплины "Верстка и прототипирование сайтов", СПбПУ.</p>
                 </div>
                 <nav>

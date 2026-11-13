@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Задание 1 по курсу верстки: рисунок динозавра средствами CSS на холсте 200x200 пикселей.">
     <title>Задание 1. CSS-рисунок - AgentLab</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style.css?v=4">
     <link rel="stylesheet" href="../css/pic.css">
 </head>
 <body>
@@ -14,7 +14,7 @@
     <header class="header">
         <div class="container header-inner">
             <a class="logo-link" href="../index.html">
-                <span class="logo"><span class="logo__core"></span></span>
+                <span class="logo"><span class="logo-inner"></span></span>
                 <span class="logo-text">
                     <span class="site-name">AgentLab</span>
                     <span class="site-desc">учебный сайт об ИИ-агентах</span>
@@ -36,15 +36,8 @@
     <!-- Основное содержимое -->
     <main class="page-main" id="content">
         <div class="container">
-            <nav class="breadcrumbs">
-                <ol>
-                    <li><a href="../index.html">Главная</a></li>
-                    <li><a href="../index.html#tasks">Задания</a></li>
-                    <li>Задание 1</li>
-                </ol>
-            </nav>
 
-            <article class="content-box clearfix">
+<article class="content-box clearfix">
                 <h1>Задание 1. Рисунок средствами CSS (вариант 1)</h1>
                 <p class="intro-text">
                     В первой работе нужно было собрать картинку размером 200x200 пикселей без единого файла изображения
@@ -55,7 +48,7 @@
                 <section>
                     <h2>Результат работы</h2>
                     <div class="demo">
-                        <p class="demo__hint">Ниже показан сам CSS-рисунок (собран из обычных тегов <code>div</code> и <code>span</code>):</p>
+                        <p class="demo-text">Ниже показан сам CSS-рисунок (собран из обычных тегов <code>div</code> и <code>span</code>):</p>
                         <div class="canvas-200" role="img" aria-label="Зелёный динозавр с усиками стоит на полосатой почве, справа трава, сверху ветка с листьями">
                             <!-- Почва -->
                             <div class="ground"></div>
@@ -106,8 +99,8 @@
                 <section>
                     <h2>Как собирался этот рисунок</h2>
                     <figure class="img-figure img-right">
-                        <a href="../images/screens/dino.webp"><img src="../images/screens/dino.webp" width="612" height="615"
-                             alt="Увеличенный скриншот CSS-рисунка динозавра"></a>
+                        <img src="../images/screens/dino.png" width="612" height="615"
+                             alt="Увеличенный скриншот CSS-рисунка динозавра">
                         <figcaption>Рис. 1. Вид рисунка при увеличении: за счет CSS-свойств края фигур остаются четкими.</figcaption>
                     </figure>
                     <p>
@@ -127,8 +120,8 @@
                     </p>
 
                     <figure class="img-figure img-left">
-                        <a href="../images/screens/dino-debug.webp"><img src="../images/screens/dino-debug.webp" width="612" height="615"
-                             alt="Отладочный режим рисунка с подсветкой границ всех блоков"></a>
+                        <img src="../images/screens/dino-debug.png" width="612" height="615"
+                             alt="Отладочный режим рисунка с подсветкой границ всех блоков">
                         <figcaption>Рис. 2. Режим отладки в браузере с включенными границами каждого div-блока.</figcaption>
                     </figure>
                     <p>
@@ -148,8 +141,8 @@
                 <section>
                     <h2>Основные приемы CSS для создания фигур</h2>
                     <figure class="img-figure img-right">
-                        <a href="../images/diagrams/css-shapes.svg"><img src="../images/diagrams/css-shapes.svg" width="640" height="420"
-                             alt="Четыре базовых приема рисования фигур на CSS"></a>
+                        <img src="../images/diagrams/css-shapes.png" width="640" height="420"
+                             alt="Четыре базовых приема рисования фигур на CSS">
                         <figcaption>Рис. 3. Четыре базовых приема: эллипс, форма листа, треугольник из рамок и изогнутая дуга.</figcaption>
                     </figure>
                     <p>
@@ -163,8 +156,8 @@
                         <li><strong>Стебли травы, усики и ветка</strong> - это пустые блоки с прозрачным фоном, у которых включена только одна или две соседние стороны рамки (например, верхняя и левая) вместе со скруглением угла.</li>
                     </ul>
                     <figure class="img-figure img-left">
-                        <a href="../images/diagrams/positioning.svg"><img src="../images/diagrams/positioning.svg" width="640" height="420"
-                             alt="Схема отсчета координат bottom и left на холсте 200x200"></a>
+                        <img src="../images/diagrams/positioning.png" width="640" height="420"
+                             alt="Схема отсчета координат bottom и left на холсте 200x200">
                         <figcaption>Рис. 4. Отсчет координат от нижнего левого угла через свойства bottom и left.</figcaption>
                     </figure>
                     <p>
@@ -188,7 +181,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <span class="logo logo--sm"><span class="logo__core"></span></span>
+                    <span class="logo logo-small"><span class="logo-inner"></span></span>
                     <p>AgentLab - учебный сайт об устройстве ИИ-агентов. Выполнен в рамках дисциплины "Верстка и прототипирование сайтов", СПбПУ.</p>
                 </div>
                 <nav>
